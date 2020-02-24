@@ -17,6 +17,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+
+
+        //This initializes the spinner function by pulling in from the "makes_array"
+        val spinner: Spinner = findViewById(R.id.makes_spinner)
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.makes_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice)
+            // Apply the adapter to the spinner
+            spinner.adapter = adapter
+        }
+
+/*
         Spinner mySpinner = (Spinner) findViewById(R.id.Makes_Spinner)
 
         //An array adapter is bascially how the string arrays are placed into the Spinner
@@ -38,5 +56,7 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        */
+
     }
 }
